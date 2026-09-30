@@ -1,22 +1,14 @@
 #include "raylib.h"
 #include "./core/Board.hpp"
 
+#include <iostream>
+
 int main(){
-    InitWindow(800, 600, "The Cronos");
-    SetTargetFPS(60);
-
-    Board chessBoard;
-    chessBoard.initBoard();
-
-    while (!WindowShouldClose())
-    {
-        BeginDrawing();
-            ClearBackground(RAYWHITE);
-            chessBoard.drawBoard();
-        EndDrawing();
-    }
-
-    CloseWindow();
-    return 0;
     
+    Board board;
+    board.setupInitialPosision();
+    board.printBoard();
+    
+    std::cin.get();
+    return 0;
 }
